@@ -18,6 +18,20 @@ builder.Services.AddDbContextPool<ApplicationDbContext>(options =>
 
 
 
+builder.Services.AddCors(option =>
+{
+    option.AddPolicy(name: "MyPolicy",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:3000/")
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+        });
+});
+
+
+
 
 
 builder.Services.AddControllers();
@@ -33,6 +47,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors("MyPolicy");
+
 
 app.UseHttpsRedirection();
 

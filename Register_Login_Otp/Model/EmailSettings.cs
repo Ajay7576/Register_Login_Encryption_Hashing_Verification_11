@@ -7,6 +7,8 @@
         public string HOST  { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string callbackUrl { get; set; }
+        public string EncryptionKey  { get; set; }
 
 
     }

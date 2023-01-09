@@ -3,7 +3,7 @@
     public class Otp
     {
 
-        public string? OTP { get; set; } 
+        public int? OTP { get; set; } 
 
     }
 }
